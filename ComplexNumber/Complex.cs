@@ -12,5 +12,15 @@ namespace ComplexNumber
             this.imaginary = imaginaryPart;
         }
 
+        public override string ToString()
+        {
+            return (String.Format("{0} + {1}i", real, imaginary));
+        }
+
+        public static ComplexNumber operator +(ComplexNumber a, ComplexNumber b)
+        {
+            return new ComplexNumber(a.real + b.real, a.imaginary + b.imaginary);
+        }
+
     }
 }
