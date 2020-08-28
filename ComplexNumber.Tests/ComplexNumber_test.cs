@@ -53,5 +53,25 @@ namespace ComplexNumber.UnitTests
             Assert.Equal(-2, result.real);
             Assert.Equal(4, result.imaginary);
         }
+
+        [Fact]
+        public void ComplexMultiplication()
+        {
+            ComplexNumber a = new ComplexNumber(1, 2);
+            ComplexNumber b = new ComplexNumber(1, 2);
+            ComplexNumber result = a * b;
+            Assert.Equal(-3, result.real);
+            Assert.Equal(4, result.imaginary);
+        }
+
+        [Fact]
+        public void ComplexMultiplicationWithNegatives()
+        {
+            ComplexNumber a = new ComplexNumber(-1, 2);
+            ComplexNumber b = new ComplexNumber(1, -2);
+            ComplexNumber result = a * b;
+            Assert.Equal(3, result.real);
+            Assert.Equal(4, result.imaginary);
+        }
     }
 }
